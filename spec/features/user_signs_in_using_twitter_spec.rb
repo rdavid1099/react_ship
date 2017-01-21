@@ -9,6 +9,6 @@ describe 'User clicks log in' do
     expect(page).to have_content('TestTwitter')
     expect(page).to have_content('Logout')
     expect(page).to have_content('Welcome to ReactShip')
-    expect(page).to have_current_path(users_dashboard_path)
+    expect(page).to have_current_path(user_path(user))
   end
 end
