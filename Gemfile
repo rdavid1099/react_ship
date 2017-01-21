@@ -13,6 +13,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'figaro'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'react-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
