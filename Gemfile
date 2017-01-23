@@ -9,9 +9,18 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'figaro'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'react-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.5'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'shoulda-matchers'
 end
 
 group :development do

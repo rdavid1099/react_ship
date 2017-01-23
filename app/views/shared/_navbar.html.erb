@@ -1,0 +1,10 @@
+<div class="navbar">
+  <p>
+    <% unless logged_in? %>
+      <%= link_to "Login Using Twitter", twitter_login_path %>
+    <% else %>
+      <%= current_user.screen_name %> 
+      <%= link_to 'Logout', logout_path, mehtod: :delete %>
+    <% end %>
+  </p>
+</div>
