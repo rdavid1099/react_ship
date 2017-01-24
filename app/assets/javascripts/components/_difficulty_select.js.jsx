@@ -1,7 +1,6 @@
 var DifficultySelect = React.createClass({
   getInitialState () {
-    return { selectedDifficulty: 'Intermediate (8x8 Map)',
-             displaySelect: false }
+    return { displaySelect: false }
   },
 
   renderDifficultySelect () {
@@ -9,14 +8,14 @@ var DifficultySelect = React.createClass({
   },
 
   handleSelection (event) {
-    this.setState({ selectedDifficulty: event.target.innerText,
-                    displaySelect: false })
+    this.props.handleDifficultySelection(event)
+    this.setState({ displaySelect: false })
   },
 
   render () {
     return (
       <div>
-        <p>Select Difficulty: <button onClick={this.renderDifficultySelect}>{this.state.selectedDifficulty}</button></p>
+        <p>Select Difficulty: <button onClick={this.renderDifficultySelect}>{this.props.selectedDifficulty}</button></p>
         {this.state.displaySelect &&
           <div>
             <button onClick={this.handleSelection}>Beginner (4x4 Map)</button>
