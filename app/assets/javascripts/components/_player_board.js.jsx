@@ -8,12 +8,11 @@ var PlayerBoard = React.createClass({
     while (y < boardSize) {
       while (x < boardSize) {
         row.push((
-          <div>
-            <h3>Cell</h3>
-          </div>
+          <span className='cell'>Cell</span>
         ))
         x += 1
       }
+      row.push((<br />))
       board.push(row)
       row = []
       x = 0
