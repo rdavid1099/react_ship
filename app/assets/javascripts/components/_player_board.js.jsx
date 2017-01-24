@@ -8,7 +8,11 @@ var PlayerBoard = React.createClass({
     return (
       <div>
         <h3>Player Board Size: {this.props.boardSize}</h3>
-        {cells}
+        <table>
+          <tbody>
+            {cells}
+          </tbody>
+        </table>
       </div>
     )
   }

@@ -8,12 +8,17 @@ var Board = React.createClass({
     while (y < boardSize) {
       while (x < boardSize) {
         row.push((
-          <span className='cell' onClick={controller.handleClick}>Cell</span>
+          <td key={'cell-' + y + '-' + x} className='cell' onClick={controller.handleClick}>Cell</td>
+          // <span className='cell' onClick={controller.handleClick}>Cell</span>
         ))
         x += 1
       }
-      row.push((<br />))
-      board.push(row)
+      // row.push((<br />))
+      board.push((
+        <tr key={'row-' + y}>
+          {row}
+        </tr>
+      ))
       row = []
       x = 0
       y += 1

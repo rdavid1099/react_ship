@@ -8,7 +8,11 @@ var Radar = React.createClass({
     return (
       <div>
         <h3>Radar Board Size: {this.props.boardSize}</h3>
-        {cells}
+        <table>
+          <tbody>
+            {cells}
+          </tbody>
+        </table>
       </div>
     )
   }
