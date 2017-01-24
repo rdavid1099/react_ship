@@ -9,11 +9,9 @@ var Board = React.createClass({
       while (x < boardSize) {
         row.push((
           <td key={'cell-' + y + '-' + x} className='cell' onClick={controller.handleClick}>Cell</td>
-          // <span className='cell' onClick={controller.handleClick}>Cell</span>
         ))
         x += 1
       }
-      // row.push((<br />))
       board.push((
         <tr key={'row-' + y}>
           {row}

@@ -18,17 +18,29 @@ var Menu = React.createClass({
   },
 
   initPlay () {
-
+    this.props.handleGameStart()
   },
 
   render () {
     return (
       <div>
         <h3>Game Menu</h3>
-        <DifficultySelect
-          selectedDifficulty={this.state.selectedDifficulty}
-          handleDifficultySelection={this.handleDifficultySelection} />
-        <button onClick={this.initPlay}>Play New Game</button><br />
+        {!this.props.playing &&
+          <div className='new-game-menu'>
+            <DifficultySelect
+              selectedDifficulty={this.state.selectedDifficulty}
+              handleDifficultySelection={this.handleDifficultySelection} />
+            <button onClick={this.initPlay}>Play New Game</button><br />
+          </div>
+        }
+        {this.props.playing &&
+          <div className='in-game-stats'>
+            <h4>Stats</h4>
+            <p>Shots Fired: {this.props.shotsFired}</p>
+            <p>Shots Hit: {this.props.shotsHit}</p>
+            <p>Shots Missed: {this.props.shotsMissed}</p>
+          </div>
+        }
         <button>Instructions</button><br />
         <button>Quit</button>
       </div>
