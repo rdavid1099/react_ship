@@ -2,8 +2,8 @@ var Board = React.createClass({
   render () {
     return (
       <div>
-        <Radar />
-        <PlayerBoard />
+        <Radar boardSize={this.props.boardSize} />
+        <PlayerBoard boardSize={this.props.boardSize} />
       </div>
     )
   }

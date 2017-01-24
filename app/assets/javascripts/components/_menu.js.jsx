@@ -4,11 +4,21 @@ var Menu = React.createClass({
   },
 
   handleDifficultySelection (event) {
-    this.setState({ selectedDifficulty: event.target.innerText })
+    var newDifficulty = event.target.innerText
+    var size
+    if (newDifficulty === 'Beginner (4x4 Map)') {
+      size = 4
+    } else if (newDifficulty === 'Intermediate (8x8 Map)') {
+      size = 8
+    } else {
+      size = 12
+    }
+    this.props.handleBoardSize(size)
+    this.setState({ selectedDifficulty: newDifficulty })
   },
 
   initPlay () {
-    
+
   },
 
   render () {
