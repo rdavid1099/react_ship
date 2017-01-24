@@ -5,13 +5,7 @@ var Main = React.createClass({
         <div className='header'>
           <Header />
         </div>
-        <div className='board'>
-          <Board />
-        </div>
-        <div className='menu'>
-          <Menu />
-        </div>
-        <FleetStatus />
+        <Body />
       </div>
     )
   }
