@@ -10,9 +10,7 @@ var Body = React.createClass({
   render () {
     return (
       <div>
-        <div className='board'>
-          <Board boardSize={this.state.boardSize} />
-        </div>
+        <Board boardSize={this.state.boardSize} />
         <div className='menu'>
           <Menu handleBoardSize={this.handleBoardSize} />
         </div>

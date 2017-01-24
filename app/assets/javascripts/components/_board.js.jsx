@@ -28,9 +28,13 @@ var Board = React.createClass({
 
   render () {
     return (
-      <div>
-        <Radar generateCells={this.generateCells} boardSize={this.props.boardSize} />
-        <PlayerBoard generateCells={this.generateCells} boardSize={this.props.boardSize} />
+      <div className='row'>
+        <div className='col-md-6'>
+          <Radar generateCells={this.generateCells} boardSize={this.props.boardSize} />
+        </div>
+        <div className='col-md-6'>
+          <PlayerBoard generateCells={this.generateCells} boardSize={this.props.boardSize} />
+        </div>
       </div>
     )
   }
