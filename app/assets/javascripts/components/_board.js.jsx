@@ -8,7 +8,7 @@ var Board = React.createClass({
     while (y < boardSize) {
       while (x < boardSize) {
         row.push((
-          <td key={'cell-' + y + '-' + x} className='cell' onClick={controller.handleClick}>Cell</td>
+          <td key={'cell-' + y + '-' + x} id={y + ',' + x} className='cell' onClick={controller.handleClick}>Cell</td>
         ))
         x += 1
       }
@@ -25,13 +25,17 @@ var Board = React.createClass({
   },
 
   render () {
+    var divStyle = {
+      display: 'block'
+    }
     return (
       <div className='row'>
-        <div className='col-md-6'>
-          <Radar generateCells={this.generateCells} boardSize={this.props.boardSize} />
-        </div>
-        <div className='col-md-6'>
+        <div className='col-md-6' id='player-board'>
           <PlayerBoard generateCells={this.generateCells} boardSize={this.props.boardSize} />
+        </div>
+        <div className='col-md-6' id='radar'>
+          <div id='cover' style={divStyle}></div>
+          <Radar generateCells={this.generateCells} boardSize={this.props.boardSize} />
         </div>
       </div>
     )

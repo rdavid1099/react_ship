@@ -1,6 +1,6 @@
 var PlayerBoard = React.createClass({
-  handleClick () {
-    console.log('PLAYER')
+  handleClick (event) {
+    console.log('PLAYER: ' + event.target.id)
   },
 
   render () {

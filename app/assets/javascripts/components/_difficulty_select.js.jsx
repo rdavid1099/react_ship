@@ -14,7 +14,7 @@ var DifficultySelect = React.createClass({
 
   render () {
     return (
-      <div>
+      <div className='new-game-menu'>
         <p>Select Difficulty: <button onClick={this.renderDifficultySelect}>{this.props.selectedDifficulty}</button></p>
         {this.state.displaySelect &&
           <div>

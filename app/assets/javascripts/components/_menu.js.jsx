@@ -21,28 +21,40 @@ var Menu = React.createClass({
     this.props.handleGameStart()
   },
 
+  resetBoard () {
+    this.props.handleQuit()
+    this.setState({ selectedDifficulty: 'Intermediate (8x8 Map)' })
+  },
+
   render () {
     return (
       <div>
         <h3>Game Menu</h3>
-        {!this.props.playing &&
-          <div className='new-game-menu'>
+        {this.props.playing === false &&
+          <div>
             <DifficultySelect
               selectedDifficulty={this.state.selectedDifficulty}
               handleDifficultySelection={this.handleDifficultySelection} />
             <button onClick={this.initPlay}>Play New Game</button><br />
           </div>
         }
-        {this.props.playing &&
-          <div className='in-game-stats'>
-            <h4>Stats</h4>
-            <p>Shots Fired: {this.props.shotsFired}</p>
-            <p>Shots Hit: {this.props.shotsHit}</p>
-            <p>Shots Missed: {this.props.shotsMissed}</p>
+        {this.props.playing === 'ships' &&
+          <div>
+            <ShipPlacement
+              selectedDifficulty={this.state.selectedDifficulty}
+              handleShipPlacement={this.props.handleShipPlacement} />
+          </div>
+        }
+        {this.props.playing === true &&
+          <div>
+            <Stats
+              shotsFired={this.props.shotsFired}
+              shotsHit={this.props.shotsHit}
+              shotsMissed={this.props.shotsMissed} />
           </div>
         }
         <button>Instructions</button><br />
-        <button>Quit</button>
+        <button onClick={this.resetBoard}>Quit</button>
       </div>
     )
   }

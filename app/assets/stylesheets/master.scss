@@ -3,6 +3,23 @@
   text-align: center;
 }
 
+#player-board {
+
+}
+
+#radar {
+
+}
+
+#cover {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background-color: #ddd;
+  opacity: 0.3;  
+}
+
 .board {
   background-color: blue;
 }
